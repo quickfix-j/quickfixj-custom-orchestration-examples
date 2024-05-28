@@ -115,18 +115,6 @@
                         <goals>
                             <goal>jar</goal>
                         </goals>
-<!--
-                        <configuration>
-                            <quiet>true</quiet>
-                            <doclint>none</doclint>
--->
-<!--                            <maxmemory>2g</maxmemory>-->
-<!--
-                            <detectOfflineLinks>false</detectOfflineLinks>
-                            <includeDependencySources>false</includeDependencySources>
-                            <sourcepath>${project.build.directory}/generated-sources/quickfix/fixt11;${project.build.directory}/generated-sources/quickfix/field</sourcepath>
-                        </configuration>
--->
                     </execution>
                 </executions>
             </plugin>
@@ -146,9 +134,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <configuration>
                     <includes>
-                        <!-- TODO -->
-                        <include>FIXT11.xml</include>
-                        <include>quickfix/fixt11/**</include>
+                        <include>*.xml</include>
+                        <include>quickfix/fix*/**</include>
                         <include>quickfix/field/**</include>
                     </includes>
                 </configuration>
