@@ -1,0 +1,152 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.quickfixj.custom.examples</groupId>
+    <artifactId>orchestration-examples-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>QuickFIX/J custom orchestration examples</name>
+    <description>
+        Examples of customising QuickFIX/J builds with FIX Orchestra
+    </description>
+    <url>http://www.quickfixj.org</url>
+
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+
+    <scm>
+        <connection>scm:git:git://github.com/quickfix-j/quickfixj-custom-orchestration-examples.git</connection>
+        <developerConnection>scm:git:git@github.com:quickfix-j/quickfixj-custom-orchestration-examples.git</developerConnection>
+        <url>https://github.com/quickfix-j/quickfixj-custom-orchestration-examples/</url>
+        <tag>master</tag>
+    </scm>
+
+    <developers>
+        <developer>
+            <id>dcagibbs</id>
+            <name>David Gibbs</name>
+        </developer>
+    </developers>
+
+    <contributors>
+    </contributors>
+
+    <issueManagement>
+        <system>JIRA</system>
+        <url>http://www.quickfixj.org/jira/</url>
+    </issueManagement>
+
+    <properties>
+        <!--project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <slf4j.version>2.0.13</slf4j.version>
+        <mockito-core.version>4.11.0</mockito-core.version>
+        <hamcrest.version>2.2</hamcrest.version>
+        <junit.jupiter.version>5.10.2</junit.jupiter.version>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <mainClass/>
+        <maven.version>3.8.7</maven.version>
+        <maven-libs-version>3.9.6</maven-libs-version>
+        <maven-plugin-api-version>3.9.6</maven-plugin-api-version>
+        <maven-resources-plugin-version>3.3.1</maven-resources-plugin-version>
+        <maven-jar-plugin-version>3.4.1</maven-jar-plugin-version>
+        <maven-surefire-plugin-version>3.2.5</maven-surefire-plugin-version>
+        <maven-pmd-plugin-version>3.22.0</maven-pmd-plugin-version>
+        <maven-source-plugin-version>3.3.1</maven-source-plugin-version>
+        <maven-javadoc-plugin-version>3.6.3</maven-javadoc-plugin-version>
+        <maven-shade-plugin-version>3.5.3</maven-shade-plugin-version>
+        <maven-assembly-plugin-version>3.7.1</maven-assembly-plugin-version>
+        <maven-bundle-plugin-version>5.1.9</maven-bundle-plugin-version>
+        <maven-gpg-plugin-version>3.2.4</maven-gpg-plugin-version>
+        <maven-deploy-plugin-version>3.1.2</maven-deploy-plugin-version>
+        <nexus-staging-maven-plugin-version>1.6.13</nexus-staging-maven-plugin-version>
+        <build-helper-maven-plugin-version>3.6.0</build-helper-maven-plugin-version>
+        <maven-shared-utils.version>3.4.2</maven-shared-utils.version>
+        <file-management.version>3.0.0</file-management.version>
+        <maven-plugin-annotations.version>3.13.0</maven-plugin-annotations.version>
+        <maven-plugin-testing-harness.version>3.3.0</maven-plugin-testing-harness.version>
+        <plantuml-maven-plugin-version>1.2</plantuml-maven-plugin-version>
+        <plantuml-version>8059</plantuml-version>
+        <xml-maven-plugin-version>1.1.0</xml-maven-plugin-version>
+        <docgen.version>1.6.8</docgen.version>
+        <jaxb.version>4.0.2</jaxb.version>
+        <apache.mina.version>2.2.3</apache.mina.version>
+        <commons.io.version>2.16.1</commons.io.version>
+         -->
+        <maven-compiler-plugin-version>3.13.0</maven-compiler-plugin-version>
+        <org.quickfixj.orchestra.tools.version>1.0.2</org.quickfixj.orchestra.tools.version>
+        <quickfixj.version>3.0.0-SNAPSHOT</quickfixj.version>
+        <fix-orchestra.repository.version>1.7.3</fix-orchestra.repository.version>
+        <fix-orchestra.standard.version>1.5.4</fix-orchestra.standard.version>
+        <orchestra.file>example-custom-orchestra.xml</orchestra.file>
+        <jdkLevel>1.8</jdkLevel>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.fixprotocol.orchestrations</groupId>
+                <artifactId>fix-standard</artifactId>
+                <version>${fix-orchestra.standard.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.fixprotocol.orchestra</groupId>
+                <artifactId>repository</artifactId>
+                <version>${fix-orchestra.repository.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.quickfixj</groupId>
+                <artifactId>quickfixj-core</artifactId>
+                <version>${quickfixj.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.quickfixj</groupId>
+                <artifactId>quickfixj-base</artifactId>
+                <version>${quickfixj.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.quickfixj</groupId>
+                <artifactId>quickfixj-messages-fixt11</artifactId>
+                <version>${quickfixj.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <modules>
+        <module>custom-application-and-session-messages</module>
+        <module>custom-application-messages</module>
+        <module>custom-session-messages</module>
+    </modules>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven-compiler-plugin-version}</version>
+                    <inherited>true</inherited>
+                    <configuration>
+                        <forceJavacCompilerUse>true</forceJavacCompilerUse> <!-- https://bugs.openjdk.java.net/browse/JDK-8216202 -->
+                        <meminitial>2g</meminitial>
+                        <maxmem>4g</maxmem>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-antrun-plugin</artifactId>
+                    <version>3.1.0</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+</project>
