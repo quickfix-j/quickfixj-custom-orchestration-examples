@@ -3,6 +3,7 @@
 ![](./FIXorchestraLogo.png)
 
 #Introduction
+
 The repository contains examples of customisation when building from a FIX Orchestra specification.
 
 The examples are contrived and are only for the purpose of showing some of the ways that customisation can be accomplished.
@@ -24,4 +25,5 @@ The more complete documents for customising QuickFIX/J are available on the
 See also [QuickFIX/J Orchestra](https://github.com/quickfix-j/quickfixj-orchestra).
 
 #Build
+
  `mvn clean install -Djdk.xml.xpathExprGrpLimit=1024 -Djdk.xml.xpathExprOpLimit=1024`
