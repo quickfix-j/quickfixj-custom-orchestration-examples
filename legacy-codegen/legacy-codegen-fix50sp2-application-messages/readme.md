@@ -22,11 +22,20 @@ The names of constants are different in many cases.
 
 Legacy style builds may be convenient if working with existing customised QuickFIX Dictionaries.
 
-## SecurityIDSource
+## Customisations
+See `src/main/resourcs`
+
+### SecurityIDSource
 
 The Field SecurityIDSource is customised as an example. See `src/main/resourcs`
 
-## Optionally Skip javadoc
+###  QuoteMsgID 
+
+The Field QuoteMsgID is added to Execution Report as an example. See `src/main/resourcs`
+
+## Build
+
+### Optionally Skip javadoc
 
 The build runs a little faster if one skips javadoc generation
 

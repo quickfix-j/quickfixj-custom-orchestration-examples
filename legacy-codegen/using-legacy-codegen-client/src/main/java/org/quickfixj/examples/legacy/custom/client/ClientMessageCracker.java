@@ -17,7 +17,7 @@ public class ClientMessageCracker extends MessageCracker {
     public void onMessage(ExecutionReport executionReport, SessionID sessionID)
             throws FieldNotFound {
         Instrument instrumentComponent = executionReport.getInstrument(); // invariant
-        log.info("Received ExecutionReport from sender [{}]:: clOrdID {}, symbol {}, side {}, transactTime {}, ordType {}, securityIDSource {}, securityID {}",
+        log.info("Received ExecutionReport from sender [{}]:: clOrdID {}, symbol {}, side {}, transactTime {}, ordType {}, securityIDSource {}, securityID {}, quoteMsgID {}",
                 executionReport.getHeader().getString(SenderCompID.FIELD),
                 executionReport.getClOrdID().getValue(),
                 instrumentComponent.getSymbol().getValue(),
@@ -25,7 +25,10 @@ public class ClientMessageCracker extends MessageCracker {
                 executionReport.getTransactTime().getValue(),
                 executionReport.getOrdType().getValue(),
                 instrumentComponent.isSetSecurityIDSource() ? instrumentComponent.getSecurityIDSource().getValue() : "",
-                instrumentComponent.isSetSecurityID() ? instrumentComponent.getSecurityID().getValue() : "");
+                instrumentComponent.isSetSecurityID() ? instrumentComponent.getSecurityID().getValue() : "",
+                executionReport.isSetQuoteMsgID() ? executionReport.getQuoteMsgID().getValue() : "");
+                // Receiving QuoteMsgID is not a FIX Protocol use case for NewOrderSingle,
+                // but it is set by the server to prove the customisation
     }
 
     @Override

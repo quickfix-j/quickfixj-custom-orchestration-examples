@@ -9,6 +9,7 @@ import quickfix.fix50sp2.NewOrderSingle;
 import quickfix.fix50sp2.component.Instrument;
 import quickfix.fix50sp2.component.OrderQtyData;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -66,7 +67,7 @@ public class ClientApplicationAdapter implements Application {
         NewOrderSingle newOrderSingle = new NewOrderSingle();
         newOrderSingle.set(new ClOrdID(UUID.randomUUID().toString()));
         newOrderSingle.set(new OrdType(OrdType.LIMIT));
-        newOrderSingle.set(new Price(99.09d));
+        newOrderSingle.set(new Price(new BigDecimal("99.09")));
         newOrderSingle.set(new Side(Side.BUY));
         newOrderSingle.set(new TransactTime(LocalDateTime.now()));
         Instrument instrument = new Instrument();

@@ -34,6 +34,13 @@
                 <groupId>org.quickfixj</groupId>
                 <artifactId>quickfixj-codegenerator</artifactId>
                 <version>${quickfixj.version}</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.codehaus.plexus</groupId>
+                        <artifactId>plexus-utils</artifactId>
+                        <version>4.0.2</version>
+                    </dependency>
+                </dependencies>
                 <executions>
                     <execution>
                         <id>fix50sp2</id>

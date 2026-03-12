@@ -48,7 +48,12 @@ public class ServerMessageCracker extends MessageCracker {
 
     private static ExecutionReport executionReport(NewOrderSingle newOrderSingle) throws FieldNotFound {
         ExecutionReport executionReport = new ExecutionReport();
+        executionReport.set(newOrderSingle.getSymbol());
+        executionReport.set(newOrderSingle.getSecurityIDSource());
+        executionReport.set(newOrderSingle.getSecurityID());
         executionReport.set(newOrderSingle.getClOrdID());
+        // Setting QuoteMsgID just to prove the customisation, this is not a FIX Protocol use case for NewOrderSingle
+        executionReport.set(new QuoteMsgID(UUID.randomUUID().toString()));
         executionReport.set(newOrderSingle.getSide());
         executionReport.set(newOrderSingle.getOrdType());
         executionReport.set(new TransactTime(LocalDateTime.now()));

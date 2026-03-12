@@ -44,10 +44,6 @@ See also [QuickFIX/J Orchestra](https://github.com/quickfix-j/quickfixj-orchestr
 
 # Build
 
-## Java Version
-
-Java version is 17 for compatibility with the Spring Boot 3 examples.
-
 ## Maven
 
  `mvn clean install -Djdk.xml.xpathExprGrpLimit=1024 -Djdk.xml.xpathExprOpLimit=1024`

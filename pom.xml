@@ -44,11 +44,11 @@
     <properties>
         <maven-compiler-plugin-version>3.13.0</maven-compiler-plugin-version>
         <org.quickfixj.orchestra.tools.version>1.0.2</org.quickfixj.orchestra.tools.version>
-        <quickfixj.version>3.0.0-SNAPSHOT</quickfixj.version>
+        <quickfixj.version>3.0.0</quickfixj.version>
         <fix-orchestra.repository.version>1.7.3</fix-orchestra.repository.version>
         <fix-orchestra.standard.version>1.5.4</fix-orchestra.standard.version>
         <orchestra.file>example-custom-orchestra.xml</orchestra.file>
-        <jdk.version>17</jdk.version>
+        <jdk.version>21</jdk.version>
         <quickfixj.spring.boot.starter.version>2.18.0</quickfixj.spring.boot.starter.version>
         <spring.boot.version>3.2.2</spring.boot.version>
         <lombok.version>1.18.34</lombok.version>
@@ -114,7 +114,7 @@
 
     <modules>
         <module>legacy-codegen</module>
-        <module>orchestra</module>
+<!--        <module>orchestra</module>-->
     </modules>
 
     <build>
