@@ -3,11 +3,11 @@
 
     <parent>
         <groupId>org.quickfixj.custom.examples</groupId>
-        <artifactId>legacy-codegen-parent</artifactId>
+        <artifactId>orchestra-fix50sp2-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>using-legacy-codegen-client</artifactId>
+    <artifactId>fix50sp2-client</artifactId>
     <packaging>jar</packaging>
 
     <dependencies>
@@ -41,7 +41,7 @@
         </dependency>
         <dependency>
             <groupId>org.quickfixj.custom.examples</groupId>
-            <artifactId>legacy-codegen-fix50sp2-application-messages</artifactId>
+            <artifactId>fix50sp2-application-messages</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 

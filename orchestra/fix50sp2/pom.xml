@@ -15,7 +15,7 @@
 
     <modules>
         <module>fix50sp2-application-messages</module>
-        <module>using-fix50sp2-server</module>
-        <module>using-fix50sp2-client</module>
+        <module>fix50sp2-server</module>
+        <module>fix50sp2-client</module>
     </modules>
 </project>

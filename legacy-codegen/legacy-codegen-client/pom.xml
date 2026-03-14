@@ -7,7 +7,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>using-legacy-codegen-server</artifactId>
+    <artifactId>legacy-codegen-client</artifactId>
     <packaging>jar</packaging>
 
     <dependencies>

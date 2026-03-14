@@ -4,3 +4,4 @@
 */*.iml
 .sdkmanrc
 **/*.iml
+setup.sh

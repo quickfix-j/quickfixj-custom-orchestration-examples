@@ -15,7 +15,7 @@
 
     <modules>
         <module>fixlatest-application-messages</module>
-        <module>using-fixlatest-server</module>
-        <module>using-fixlatest-client</module>
+        <module>fixlatest-server</module>
+        <module>fixlatest-client</module>
     </modules>
 </project>

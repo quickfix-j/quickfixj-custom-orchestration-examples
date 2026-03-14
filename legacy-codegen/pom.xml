@@ -15,7 +15,7 @@
 
     <modules>
         <module>legacy-codegen-fix50sp2-application-messages</module>
-        <module>using-legacy-codegen-server</module>
-        <module>using-legacy-codegen-client</module>
+        <module>legacy-codegen-server</module>
+        <module>legacy-codegen-client</module>
     </modules>
 </project>
