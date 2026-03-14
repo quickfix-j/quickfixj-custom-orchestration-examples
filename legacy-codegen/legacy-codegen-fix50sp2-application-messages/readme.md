@@ -13,14 +13,14 @@ legacy code generator. This allows the custom messages packages to be maintained
 QuickFIX/J project.
 
 Note that in this example the Maven co-ordinates for the custom artifact are different from the QuickFIX/J 
-`groupId` and `artifactId` . The Java package names will be the same as QuickFIX/J. 
+`groupId` and `artifactId` . The Java package names in the jar will be the same as QuickFIX/J. 
 Only one implementation of the QuickFIX/J packages should be in the classpath at compilation or run time.
 
 Legacy style builds may be useful to avoid having to change references to `static` constants based on the enumerated values
 for _Fields_ in legacy QuickFIX Dictionaries; rather than FIX Orchestra `codeset`s. 
 The names of constants are different in many cases.
 
-Legacy style builds may be convenient if working with existing customised QuickFIX Dictionaries.
+Legacy style builds may be convenient if working with pre-existing customised QuickFIX Dictionaries.
 
 ## Customisations
 See `src/main/resourcs`

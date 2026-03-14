@@ -30,15 +30,7 @@ The processes will connect, log on and exchange FIX Session and Application mess
 
 ## Stopping Examples
 
-Stop the examples using `Ctrl+C` .
-
-## ref:
-https://github.com/esanchezros/quickfixj-spring-boot-starter
-
-https://github.com/esanchezros/quickfixj-spring-boot-starter-examples
+Stop the examples using `Ctrl+C` or `kill -TERM <pid>`.
 
 ## Kudos
 [Eduardo Sanchez-Ros](https://github.com/esanchezros)
-
-[Contributors](https://github.com/esanchezros/quickfixj-spring-boot-starter/graphs/contributors)
-

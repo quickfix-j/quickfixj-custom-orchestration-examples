@@ -53,6 +53,7 @@ public class ServerMessageCracker extends MessageCracker {
         executionReport.set(newOrderSingle.getSecurityID());
         executionReport.set(newOrderSingle.getClOrdID());
         // Setting QuoteMsgID just to prove the customisation, this is not a FIX Protocol use case for NewOrderSingle
+        // this is just to demonstrate that adding QuoteMsgID to the ExecutionReport in the dictionary works
         executionReport.set(new QuoteMsgID(UUID.randomUUID().toString()));
         executionReport.set(newOrderSingle.getSide());
         executionReport.set(newOrderSingle.getOrdType());

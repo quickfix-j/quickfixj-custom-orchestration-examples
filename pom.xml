@@ -114,7 +114,7 @@
 
     <modules>
         <module>legacy-codegen</module>
-<!--        <module>orchestra</module>-->
+        <module>orchestra</module>
     </modules>
 
     <build>

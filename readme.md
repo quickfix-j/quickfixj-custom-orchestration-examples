@@ -20,10 +20,6 @@ The example FIX Orchestra file was prepared using "Playlist" which is available 
 The more complete documents for customising QuickFIX/J are available on the 
 [QuickFIX/J github repository](https://github.com/quickfix-j/quickfixj).
 
-[Customising QuickFIX/J](https://github.com/quickfix-j/quickfixj/blob/master/customising-quickfixj.md) may be a good starting point.
-
-See also [QuickFIX/J Orchestra](https://github.com/quickfix-j/quickfixj-orchestra).
-
 ## Recommended Approaches to customisation
 
 * Build custom packages only for the required FIX protocol versions 
@@ -35,12 +31,28 @@ See also [QuickFIX/J Orchestra](https://github.com/quickfix-j/quickfixj-orchestr
 * Consider building using the legacy (original) code generator if you don't want the FIXlatest protocol version and:
   * have legacy code using older versions of QuickFIX/J and want to benefit from QuickFIX/J 3.0.0 while minimising code changes 
   * have legacy customisations using QuickFIX dictionaries and want to defer customising using FIX Orchestra
+* Consider customising using FIX Orchestra if you want to track the FIX Latest standard and benefit from the extensions 
+to the FIX Protocol after FIX 5.0sp2.
+  * You may also benefit from tools that support FIX Orchestra.
+  * Note that you can also generate a QuickFIX/J dictionary from a FIX Orchestra specification and use that 
+    with the legacy QuickFIX/J code generator.
 
 ## Project structure
+```
+.
+├──legacy-codegen : builds QuickFIX/J classes from a custom QuickFIX dictionary using the legacy QuickFIX/j code generation, and example applications.
+├──orchestra      : builds custom QuickFIX/J classes using FIX Orchestra, and examples applications.
+```
 
-\-custom-application-messages : builds custom Application classes using FIX Orchestra.
+## Note:
 
-\-custom-legacy-code-application-messages :  builds custom Application classes from a QuickFIX dictionary using the legacy QuickFIX/j code generation.
+* the typesafe use of customised SecurityIDSource and the addition of QuoteMsgID to the Execution Report message.
+* the use of the QuickFIX/J base, core and FIXT1.1 package dependencies from the standard build of QuickFIX/J alongside
+  the customised messages package.
+* the differences in the application.yml files, specifying the FIX protocol version and the FIX dictionary.
+
+## Example Applications, How To
+[Example Applications](./readme-custom-applications.md)
 
 # Build
 
@@ -48,6 +60,25 @@ See also [QuickFIX/J Orchestra](https://github.com/quickfix-j/quickfixj-orchestr
 
  `mvn clean install -Djdk.xml.xpathExprGrpLimit=1024 -Djdk.xml.xpathExprOpLimit=1024`
 
-Faster without javadoc
+The build runs a little faster if one skips javadoc generation
 
 `mvn clean install -Djdk.xml.xpathExprGrpLimit=1024 -Djdk.xml.xpathExprOpLimit=1024 -Dmaven.javadoc.skip=true`
+
+# References 
+### This project
+* [legacy codegen readme](./legacy-codegen/readme.md)
+* [orchestra readme](./orchestra/readme.md)
+
+### FIX Orchestra
+* [FIX Orchestra](https://github.com/FIXTradingCommunity/orchestra)
+* [FIX Orchestra Examples](https://github.com/FIXTradingCommunity/orchestra-examples)
+
+### QuickFIX/J
+* [QuickFIX/J](https://github.com/quickfixengine/quickfixj)
+* [Customising Quickfixj](https://github.com/quickfix-j/quickfixj/blob/master/customising-quickfixj.md)
+* [Customising Quickfixj Detailed](https://github.com/quickfix-j/quickfixj/blob/master/quickfixj-messages/readme.md)
+* [QuickFIX/J Orchestra](https://github.com/quickfix-j/quickfixj-orchestra)
+
+### Spring Boot Starter
+* [Spring Boot Starter](https://github.com/esanchezros/quickfixj-spring-boot-starter)
+* [Spring Boot Starter Examples](https://github.com/esanchezros/quickfixj-spring-boot-starter-examples) 
