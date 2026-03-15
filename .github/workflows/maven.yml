@@ -28,5 +28,5 @@ jobs:
           java-version: ${{ matrix.java }}
           cache: 'maven'
       - name: Test with Maven
-        run: ./mvnw install -B -V -D"maven.javadoc.skip"="true" -Pminimal-fix-latest -D"java.util.logging.config.file"="logging.properties" -D"http.keepAlive"="false" -D"maven.wagon.http.pool"="false" -D"maven.wagon.httpconnectionManager.ttlSeconds"="120"
+        run: ./mvnw install -B -V -D"maven.javadoc.skip"="true" -D"java.util.logging.config.file"="logging.properties" -D"http.keepAlive"="false" -D"maven.wagon.http.pool"="false" -D"maven.wagon.httpconnectionManager.ttlSeconds"="120"
 
