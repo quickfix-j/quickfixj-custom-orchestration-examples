@@ -1,0 +1,53 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+
+server:
+  port: 8084
+
+management:
+  endpoint:
+    health:
+      show-details: always
+    quickfixjclient:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: quickfixjclient,health
+
+app:
+  session:
+    sender-comp-id: INITIATOR
+
+quickfixj:
+  client:
+    enabled: true
+    configString: |
+      [default]
+      BeginString=FIXT.1.1
+      DefaultApplVerID=FIX.5.0SP2
+      UseDataDictionary=Y
+      TransportDataDictionary=FIXT11.xml
+      AppDataDictionary.FIX.5.0SP2=FIX50SP2.xml
+      ConnectionType=initiator
+      TimeZone=Europe/London
+      StartTime=00:00:00
+      EndTime=00:00:00
+      ResetOnLogon=Y
+      ResetOnLogout=Y
+      ResetOnDisconnect=Y
+      ValidateUnorderedFields=Y
+      ValidateUserDefinedFields=Y
+      CheckLatency=Y
+      HeartBtInt=30
+      PersistMessages=N
+      SocketConnectHost=localhost
+      SenderCompID=${app.session.sender-comp-id}
+      
+      #SSL
+      SocketUseSSL=N
+  
+      [session]
+      TargetCompID=ACCEPTOR
+      SocketConnectPort=9882

@@ -1,0 +1,148 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.quickfixj.custom.examples</groupId>
+    <artifactId>orchestration-examples-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>QuickFIX/J custom orchestration examples</name>
+    <description>
+        Examples of customising QuickFIX/J builds with FIX Orchestra
+    </description>
+    <url>http://www.quickfixj.org</url>
+
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git:git://github.com/quickfix-j/quickfixj-custom-orchestration-examples.git</connection>
+        <developerConnection>scm:git:git@github.com:quickfix-j/quickfixj-custom-orchestration-examples.git</developerConnection>
+        <url>https://github.com/quickfix-j/quickfixj-custom-orchestration-examples/</url>
+        <tag>master</tag>
+    </scm>
+
+    <developers>
+        <developer>
+            <id>dcagibbs</id>
+            <name>David Gibbs</name>
+        </developer>
+    </developers>
+
+    <contributors>
+    </contributors>
+
+    <issueManagement>
+        <system>JIRA</system>
+        <url>http://www.quickfixj.org/jira/</url>
+    </issueManagement>
+
+    <properties>
+        <maven-compiler-plugin-version>3.13.0</maven-compiler-plugin-version>
+        <org.quickfixj.orchestra.tools.version>1.0.2</org.quickfixj.orchestra.tools.version>
+        <quickfixj.version>3.0.0</quickfixj.version>
+        <fix-orchestra.repository.version>1.7.3</fix-orchestra.repository.version>
+        <fix-orchestra.standard.version>1.5.4</fix-orchestra.standard.version>
+        <orchestra.file>example-custom-orchestra.xml</orchestra.file>
+        <jdk.version>21</jdk.version>
+        <quickfixj.spring.boot.starter.version>2.18.0</quickfixj.spring.boot.starter.version>
+        <spring.boot.version>3.2.2</spring.boot.version>
+        <lombok.version>1.18.34</lombok.version>
+        <slf4j.version>2.0.16</slf4j.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.fixprotocol.orchestrations</groupId>
+                <artifactId>fix-standard</artifactId>
+                <version>${fix-orchestra.standard.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.fixprotocol.orchestra</groupId>
+                <artifactId>repository</artifactId>
+                <version>${fix-orchestra.repository.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.quickfixj</groupId>
+                <artifactId>quickfixj-core</artifactId>
+                <version>${quickfixj.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.quickfixj</groupId>
+                <artifactId>quickfixj-base</artifactId>
+                <version>${quickfixj.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.quickfixj</groupId>
+                <artifactId>quickfixj-messages-fixt11</artifactId>
+                <version>${quickfixj.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.allune</groupId>
+                <artifactId>quickfixj-spring-boot-starter</artifactId>
+                <version>${quickfixj.spring.boot.starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.allune</groupId>
+                <artifactId>quickfixj-spring-boot-actuator</artifactId>
+                <version>${quickfixj.spring.boot.starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-simple</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <modules>
+        <module>legacy-codegen</module>
+        <module>orchestra</module>
+    </modules>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven-compiler-plugin-version}</version>
+                    <configuration>
+                        <forceJavacCompilerUse>true</forceJavacCompilerUse> <!-- https://bugs.openjdk.java.net/browse/JDK-8216202 -->
+                        <meminitial>2g</meminitial>
+                        <maxmem>4g</maxmem>
+                        <source>${jdk.version}</source>
+                        <target>${jdk.version}</target>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-antrun-plugin</artifactId>
+                    <version>3.1.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+</project>

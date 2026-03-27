@@ -1,0 +1,70 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+
+server:
+  port: 8085
+
+management:
+  endpoint:
+    health:
+      show-details: always
+    quickfixjserver:
+      enabled: true
+  health:
+    quickfixjserver:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: quickfixjserver,health
+
+logging:
+  group:
+    fix: quickfix.ThreadedSocketAcceptor, quickfixj.msg.incoming, quickfixj.msg,outgoing
+    examples: org.quickfixj.examples
+
+app:
+  session:
+    sender-comp-id: ACCEPTOR
+    socket-accept-port: 9882
+
+quickfixj:
+  server:
+    enabled: true
+    auto-startup: true
+    force-disconnect: false
+    phase: 0
+    jmx-enabled: true
+    concurrent:
+      enabled: true
+      useDefaultExecutorFactory: true
+    message-store-factory: memory
+    log-factory: slf4j
+    configString: |
+      [default]
+      BeginString=FIXT.1.1
+      DefaultApplVerID=FIX.5.0SP2
+      UseDataDictionary=Y
+      TransportDataDictionary=FIXT11.xml
+      AppDataDictionary.FIX.5.0SP2=FIX50SP2.xml
+      ConnectionType=acceptor
+      TimeZone=Europe/London
+      StartTime=00:00:00
+      EndTime=00:00:00
+      ResetOnLogon=Y
+      ResetOnLogout=Y
+      ResetOnDisconnect=Y
+      ValidateUnorderedFields=Y
+      ValidateUserDefinedFields=Y
+      CheckLatency=Y
+      HeartBtInt=30
+      PersistMessages=N
+      SenderCompID=${app.session.sender-comp-id}
+      SocketAcceptPort=${app.session.socket-accept-port}
+      
+      #SSL
+      SocketUseSSL=N
+
+      [session]
+      TargetCompID=INITIATOR

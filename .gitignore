@@ -1,0 +1,7 @@
+**/target/*
+**/logs-server/*
+.idea
+*/*.iml
+.sdkmanrc
+**/*.iml
+setup.sh
