@@ -42,7 +42,7 @@
     </issueManagement>
 
     <properties>
-        <maven-compiler-plugin-version>3.13.0</maven-compiler-plugin-version>
+        <maven-compiler-plugin-version>3.15.0</maven-compiler-plugin-version>
         <org.quickfixj.orchestra.tools.version>1.0.2</org.quickfixj.orchestra.tools.version>
         <quickfixj.version>3.0.0</quickfixj.version>
         <fix-orchestra.repository.version>1.7.3</fix-orchestra.repository.version>
