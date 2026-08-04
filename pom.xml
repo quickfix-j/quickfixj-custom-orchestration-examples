@@ -43,7 +43,7 @@
 
     <properties>
         <maven-compiler-plugin-version>3.15.0</maven-compiler-plugin-version>
-        <quickfixj.version>3.0.1</quickfixj.version>
+        <quickfixj.version>3.0.2</quickfixj.version>
         <fix-orchestra.repository.version>1.7.3</fix-orchestra.repository.version>
         <fix-orchestra.standard.version>1.5.4</fix-orchestra.standard.version>
         <orchestra.file>example-custom-orchestra.xml</orchestra.file>
